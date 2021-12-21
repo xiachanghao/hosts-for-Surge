@@ -1,0 +1,33 @@
+parsers: 
+  - url: #suburl
+    yaml:
+      prepend-proxy-groups:
+        - 
+          name: ♻ 香港
+          proxies:
+            - DIRECT
+          type: url-test
+          url: http://www.gstatic.com/generate_204
+          interval: "300"
+        - 
+          name: 🍠台湾
+          proxies:
+            - DIRECT
+          type: url-test
+          url: http://www.gstatic.com/generate_204
+          interval: "300"
+        - 
+          name: 🗾日本
+          proxies:
+            - DIRECT
+          type: url-test
+          url: http://www.gstatic.com/generate_204
+          interval: "300"
+
+      commands:
+        - proxy-groups.0.proxies=[]proxyNames|香港
+        - proxy-groups.1.proxies=[]proxyNames|台湾
+        - proxy-groups.2.proxies=[]proxyNames|日本
+        - proxy-groups.3.proxies.0+🗾日本
+        - proxy-groups.3.proxies.0+🍠台湾
+        - proxy-groups.3.proxies.0+♻ 香港
